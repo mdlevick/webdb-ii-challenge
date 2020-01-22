@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
   db.select("*")
     .from("cars")
-    .where({ car_id: req.params.id })
+    .where({ id: req.params.id })
     .first()
     .then(car => {
       res.status(200).json(car);
